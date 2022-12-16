@@ -176,30 +176,32 @@ console.log("esercizio 7");
 const whatDayIsIt = () => {
   const d = new Date();
   let day = d.getDay();
-  switch (day) {
-    case 1:
+  switch (day - 1) {
+    case 0:
       return "lunedi";
       break;
-    case 2:
+    case 1:
       return "martedì";
       break;
-    case 3:
+    case 2:
       return "mercoledì";
       break;
-    case 4:
+    case 3:
       return "giovedì";
       break;
-    case 5:
+    case 4:
       return "venerdì";
       break;
-    case 6:
+    case 5:
       return "sabato";
       break;
-    case 7:
+    case 6:
       return "domenica";
       break;
   }
 };
+
+console.log(whatDayIsIt());
 
 console.log(whatDayIsIt());
 

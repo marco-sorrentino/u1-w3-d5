@@ -203,8 +203,6 @@ const whatDayIsIt = () => {
 
 console.log(whatDayIsIt());
 
-console.log(whatDayIsIt());
-
 /* ESERCIZIO 8
   Scrivi una funzione chiamata "rollTheDices" che riceve un numero come parametro.
   Deve invocare la precedente funzione dice() il numero di volte specificato nel parametro, e deve tornare un oggetto contenente una proprietà "sum":
@@ -285,14 +283,14 @@ console.log(isTodayMyBirthday("18/12/2022"));
   Scrivi una funzione chiamata "newestMovie" che trova il film più recente nell'array "movies" fornito.
 */
 
-console.log("da vedere");
+console.log("ESERCIZIO 12");
 
 const newestMovie = () => {
-  const recentMovie = [];
+  const arrayTitoliDiFilm = [];
   for (let i = 0; i < movies.length; i++) {
-    recentMovie.push(parseInt(movies[i].Year));
+    arrayTitoliDiFilm.push(parseInt(movies[i].Year));
   }
-  return recentMovie;
+  return Math.max(...arrayTitoliDiFilm);
 };
 
 console.log(newestMovie());
@@ -411,6 +409,7 @@ console.log("esercizio 21");
 
 const selectEveryTd = () => {
   const selezionoTd = document.getElementsByTagName("td");
+  return selezionoTd;
 };
 
 /* ESERCIZIO 22
@@ -420,9 +419,9 @@ const selectEveryTd = () => {
 console.log("ESERCIZIO 24 DA RIVEDERE");
 
 const printTextinTd = () => {
-  const changeTexttd = document.getElementsByClassName("td");
+  const changeTexttd = document.getElementsByTagName("td");
   for (let i = 0; i < changeTexttd.length; i++) {
-    return console.log("boh");
+    console.log(changeTexttd[i].textContent);
   }
 };
 
@@ -433,7 +432,7 @@ const printTextinTd = () => {
 console.log("ESERCIZIO 23");
 
 const selectLink = () => {
-  const linkSelected = document.getElementsByTagName("a");
+  const linkSelected = document.querySelectorAll("a");
   for (let i = 0; i < linkSelected.length; i++) {
     linkSelected[i].style.backgroundColor = "red";
   }
@@ -456,6 +455,13 @@ const addAnOtherElement = () => {
   Scrivi una funzione per svuotare la lista non ordinata con id "myList".
 */
 
+const removeList = () => {
+  let listToClear = document.getElementById("myList");
+  while (listToClear.firstChild) {
+    listToClear.removeChild(listToClear.firstChild);
+  }
+};
+
 /* ESERCIZIO 26
   Scrivi una funzione per aggiungere ad ogni tag <tr> la classe CSS "test"
 */
@@ -465,7 +471,7 @@ console.log("ESERCIZIO 26");
 const addingClass = () => {
   const addingClassToTr = document.getElementsByTagName("tr");
   for (let i = 0; i < addingClassToTr.length; i++) {
-    addingClassToTr.classList.add("test");
+    addingClassToTr[i].classList.add("test");
   }
 };
 

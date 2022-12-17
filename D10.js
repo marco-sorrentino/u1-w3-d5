@@ -362,16 +362,13 @@ console.log(sumAllTheYears());
 
 console.log("esercizio 17");
 
-const searchByTitle = (Title) => {
-  const arrayById = [];
-  for (let i = 0; i < movies.length; i++) {
-    if (movies[i].Title === Title) {
-      return movies[i];
-    }
-  }
+const searchByTitle = (movies, str78) => {
+  return movies.filter((movies) =>
+    movies.Title.toLowerCase().includes(str78.toLowerCase())
+  );
 };
 
-console.log(searchByTitle("Avengers: Endgame"));
+console.log(searchByTitle(movies, "ultro"));
 
 /* ESERCIZIO 18
   Scrivi una funzione chiamata "searchAndDivide" che riceve una stringa come parametro e ritorna un oggetto contenente due array: "match" e "unmatch".
